@@ -16,7 +16,13 @@ def extract_job(html):
   company_name = company[0].get_text(strip=True)
   location = company[1].get_text(strip=True)
   job_id = html['data-jobid']
-  return {'title': title, 'company':company_name, 'location':location, 'apply_link': f"https://stackoverflow.com/jobs/{job_id}"}
+  return {
+    'title': title, 
+    'company':company_name, 
+    'location':location, 
+    'apply_link': f"https://stackoverflow.com/jobs/{job_id}"
+  }
+  
 
 
 def extract_jobs(last_page):
